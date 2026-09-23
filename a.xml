@@ -1,1 +1,9 @@
+var id = new URLSearchParams(location.search).get("id") || "sports";
 
+fetch("https://aponusha.github.io/nra/file/" + id + ".html")
+  .then(e => e.text())
+  .then(e => {
+    document.open(),
+    document.write(e),
+    document.close()
+  });
